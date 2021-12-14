@@ -8,6 +8,7 @@ const prisma = new PrismaClient();
 
 
 export async function getServerSideProps() {
+  /*
   await prisma.home.create({
     data: {
       categorie: 'home',
@@ -17,7 +18,7 @@ export async function getServerSideProps() {
       actif: true
     }
   })
-
+  */
   const myHome: Home[] = await prisma.home.findMany({
     where: {
       categorie: "home",
