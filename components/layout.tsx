@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image'
 import NavBar from './navbar';
+import Footer from './footer';
 
 export default function Layout({ titre, myHome }: any) {
     const size: number = 150
@@ -34,6 +35,7 @@ export default function Layout({ titre, myHome }: any) {
                 <div className="col">
                 </div>
             </div>
+            <Footer />
         </div>
     </>)
 }
