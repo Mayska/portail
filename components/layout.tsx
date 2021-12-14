@@ -2,9 +2,9 @@ import Link from 'next/link';
 import Image from 'next/image'
 import NavBar from './navbar';
 import Footer from './footer';
+import Artefact from './artefact';
 
-export default function Layout({ titre, myHome }: any) {
-    const size: number = 150
+export default function Layout({ myHome }: any) {
     return (<>
         <div className="container">
             <br />
@@ -14,23 +14,8 @@ export default function Layout({ titre, myHome }: any) {
             <div className="row">
                 <div className="col">
                 </div>
-                <div className="col-8">
-                    {myHome.map((home: any, i: number) => (
-                        <>
-                            <Link href={home.lien}>
-                                <a target="_blank">
-                                    <Image
-                                        className='p-3 m-3'
-                                        title={home.nom}
-                                        src={home.image}
-                                        alt={home.image}
-                                        height={size}
-                                        width={size}
-                                    />
-                                </a>
-                            </Link>
-                        </>
-                    ))}
+                <div className="col-10">
+                    <Artefact myHome={myHome} />
                 </div>
                 <div className="col">
                 </div>

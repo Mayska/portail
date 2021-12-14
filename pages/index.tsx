@@ -25,7 +25,6 @@ export async function getServerSideProps() {
       actif: true,
     }
   });
-  console.log(myHome)
   return {
     props: {
       initialContacts: myHome
@@ -36,7 +35,7 @@ export async function getServerSideProps() {
 export default function Index({ initialContacts }: any) {
   const [myHome] = useState<Home[]>(initialContacts);
   return (<>
-    <Layout titre="COUCOCUo" myHome={myHome}>
+    <Layout myHome={myHome}>
     </Layout>
   </>
   )
