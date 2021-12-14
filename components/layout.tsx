@@ -1,39 +1,41 @@
-
-
 import Link from 'next/link';
 import Image from 'next/image'
-
-
+import NavBar from './navbar';
+import Footer from './footer';
 
 export default function Layout({ titre, myHome }: any) {
     const size: number = 150
     return (<>
         <div className="container">
-            <h1 >
-                {titre}
-            </h1>
+            <br />
+            <br />
+            <NavBar />
+            <br />
             <div className="row">
                 <div className="col">
                 </div>
                 <div className="col-8">
                     {myHome.map((home: any, i: number) => (
-                        <><Link href={home.lien}>
-                            <a target="_blank">
-                                <Image
-                                    title={home.nom}
-                                    src={home.image}
-                                    alt={home.image}
-                                    height={size}
-                                    width={size}
-                                />
-                            </a>
-                        </Link>
+                        <>
+                            <Link href={home.lien}>
+                                <a target="_blank">
+                                    <Image
+                                        className='p-3 m-3'
+                                        title={home.nom}
+                                        src={home.image}
+                                        alt={home.image}
+                                        height={size}
+                                        width={size}
+                                    />
+                                </a>
+                            </Link>
                         </>
                     ))}
                 </div>
                 <div className="col">
                 </div>
             </div>
+            <Footer />
         </div>
     </>)
 }
